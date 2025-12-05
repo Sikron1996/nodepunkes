@@ -1,6 +1,6 @@
 
 body {
-  background: linear-gradient(180deg, #050510, #0a0f1c, #050510);
+  background: url('bg.png') center/cover fixed no-repeat;
   font-family: 'Inter', sans-serif;
   color:white;
   margin:0;
@@ -8,14 +8,31 @@ body {
   text-align:center;
 }
 
+/* Pixel logo style */
+.pixel-logo {
+  font-family: monospace;
+  font-size: 48px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px 2px 0 #000,
+      2px -2px 0 #000,
+      -2px -2px 0 #000,
+      4px 4px 0 #7b00ff;
+  image-rendering: pixelated;
+}
+
 .header {
   padding:60px 20px 40px;
   animation:fadein 1.2s ease forwards;
   opacity:0;
+  background: rgba(0,0,0,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .subtitle {
-  opacity:.7;
+  opacity:.8;
   margin-top:-10px;
   margin-bottom:20px;
   font-size:15px;
@@ -52,16 +69,15 @@ body {
   object-fit:contain;
 }
 
-/* SECTION TITLE */
 .section-title {
   margin-top:40px;
   margin-bottom:20px;
   font-size:28px;
   letter-spacing:2px;
   font-weight:700;
+  text-shadow:2px 2px 0 #000;
 }
 
-/* GRID */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
@@ -75,9 +91,11 @@ body {
 .nft {
   width:100%;
   border-radius:14px;
-  border:2px solid rgba(255,255,255,0.1);
-  box-shadow:0 0 18px rgba(0,0,0,0.4);
+  border:2px solid rgba(255,255,255,0.15);
+  box-shadow:0 0 18px rgba(0,0,0,0.6);
   transition:transform .35s, box-shadow .35s;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(4px);
 }
 
 .nft:hover {
@@ -87,16 +105,16 @@ body {
 
 .footer {
   padding:30px;
-  opacity:.6;
+  opacity:.7;
+  background:rgba(0,0,0,0.6);
 }
 
-/* SCROLL ANIMATION */
+/* Scroll animation */
 .fade-scroll {
   opacity:0;
   transform:translateY(30px);
   transition:opacity .9s ease, transform .9s ease;
 }
-
 .fade-scroll.visible {
   opacity:1;
   transform:translateY(0);
@@ -112,9 +130,8 @@ body {
   to { opacity:1; transform:translateY(0); }
 }
 
-/* RESPONSIVE */
 @media(max-width:600px){
-  h1 { font-size:32px; }
+  h1.pixel-logo { font-size:32px; }
   .btn { padding:12px 20px; }
   .grid { gap:15px; }
 }
