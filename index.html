@@ -9,23 +9,50 @@
 </head>
 <body>
 
-<h1 class="fade-in">NodePunkes</h1>
+<header class="header fade-top">
+  <h1>NodePunkes</h1>
+  <p class="subtitle">Next‑Gen Pixel Identity on Monad</p>
 
-<div class="buttons fade-in">
-  <a class="btn" href="#">Mint on Scatter</a>
-  <a class="btn" href="#">View on OpenSea</a>
-</div>
+  <div class="buttons">
+    <a class="btn" href="#">Mint on Scatter</a>
+    <a class="btn secondary" href="#">View on OpenSea</a>
+  </div>
+</header>
 
-<div class="grid">
-<img src="nft-1.png" class="nft zoom-in">
-<img src="nft-2.png" class="nft zoom-in">
-<img src="nft-3.png" class="nft zoom-in">
-<img src="nft-4.png" class="nft zoom-in">
-<img src="nft-5.png" class="nft zoom-in">
-<img src="nft-6.png" class="nft zoom-in">
-<img src="nft-7.png" class="nft zoom-in">
-<img src="nft-8.png" class="nft zoom-in">
+<section class="gallery-section">
+  <h2 class="section-title fade-scroll">COLLECTION</h2>
 
-</div>
+  <div class="grid">
+<img src="nft-1.png" class="nft fade-scroll">
+<img src="nft-2.png" class="nft fade-scroll">
+<img src="nft-3.png" class="nft fade-scroll">
+<img src="nft-4.png" class="nft fade-scroll">
+<img src="nft-5.png" class="nft fade-scroll">
+<img src="nft-6.png" class="nft fade-scroll">
+<img src="nft-7.png" class="nft fade-scroll">
+<img src="nft-8.png" class="nft fade-scroll">
+
+  </div>
+</section>
+
+<footer class="footer fade-scroll">
+  <p>© 2025 NodePunkes — Built for Monad</p>
+</footer>
+
+<script>
+// scroll fade-in
+const scrollElements = document.querySelectorAll(".fade-scroll");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+scrollElements.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
